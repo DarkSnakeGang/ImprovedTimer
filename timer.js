@@ -13,6 +13,11 @@ if(window.snake) {
         if(this.responseText.indexOf('trophy') === -1)
           return;
 
+        const poisonsnake = this.responseText.match(
+          /([a-zA-Z0-9_$]{1,8}\(this\.[a-zA-Z0-9_$]{1,8},"#5282F2","#909090"\);){3}/
+        )[0];
+
+        const poison = (window.snake_scheme_epic_cool || {}).custom_poison || '#909090';
 
         eval(
           this.responseText.match(
@@ -20,6 +25,11 @@ if(window.snake) {
           )[0].replace(
             '--:--:---',
             '-'
+          ).replace(
+            '{',
+            `{
+              ${poisonsnake.replace(/#909090/g, poison)}
+            `
           )
         );
 
