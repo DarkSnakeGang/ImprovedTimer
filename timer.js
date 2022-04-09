@@ -33,14 +33,14 @@ if(window.snake) {
           )
         );
 
-        eval(
-          this.responseText.match(
-            /[a-zA-Z0-9_$]{1,8}=function\(a\){if\(!a\.[a-zA-Z0-9_$]{1,8}&&![a-zA-Z0-9_$]{1,8}\)[^}]*?"show"\)\]\)}}/
-          )[0].match(/[a-zA-Z0-9_$]{1,8}/)[0] + `= snake.speedrun = function() {
-            const q = document.getElementsByClassName('A2vT0')[0].style.display;
-            document.getElementsByClassName('A2vT0')[0].style.display = q ? '' : 'none';
-          }`
-        );
+        // eval(
+        //   this.responseText.match(
+        //     /[a-zA-Z0-9_$]{1,8}=function\(a\){if\(!a\.[a-zA-Z0-9_$]{1,8}&&![a-zA-Z0-9_$]{1,8}\)[^}]*?"show"\)\]\)}}/
+        //   )[0].match(/[a-zA-Z0-9_$]{1,8}/)[0] + `= snake.speedrun = function() {
+        //     const q = document.getElementsByClassName('A2vT0')[0].style.display;
+        //     document.getElementsByClassName('A2vT0')[0].style.display = q ? '' : 'none';
+        //   }`
+        // );
 
 
         eval(
